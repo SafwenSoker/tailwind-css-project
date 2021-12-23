@@ -1,5 +1,60 @@
-body{
-    padding : 0;
-    margin : 0;
-    color : #FFFF;
+/* tailwind css utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .btn-blue{
+        @apply py-2 px-4 bg-blue-500 text-white font-semibold focus:ring-blue-400 focus:ring-opacity-75;
+    }
+}
+
+/* this wil add two classes to @ tailwind utilities */
+@layer utilities{
+    
+    @variants hover, focus{
+        .p-21{
+            padding : 5.5rem;
+        }
+    }
+}
+/* How @apply directive works  */
+
+/* 
+.btn{
+    @apply py-2;
+    @apply p-4;
+} */
+/*
+Result in output.css :  
+.btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding: 1rem;
+} */
+
+/* .btn{
+    @apply py-2 p-4;
+} */
+
+/* 
+The result iin output.css : 
+.btn {
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+*/
+
+/* @media screen(sm){
+    .rotate-0{
+        transform : rotate(0deg);
+    }
+} */
+
+/* OR  */
+@screen sm{
+    .rotate-0{
+        transform:rotate(0deg);
+    }
 }
