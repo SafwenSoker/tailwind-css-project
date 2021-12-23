@@ -1,1 +1,1 @@
-# tailwind css project
+# tailwindcss project
